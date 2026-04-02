@@ -29,7 +29,7 @@ body, html {
 .manifesto-section {
     position: relative;
     background: linear-gradient(var(--paper-overlay), var(--paper-overlay)), 
-                url('images/papier.webp');
+                url('papier.webp');
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
