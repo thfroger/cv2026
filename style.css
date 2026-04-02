@@ -1,0 +1,164 @@
+/* --- 1. IMPORTATION & VARIABLES --- */
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Unica+One&display=swap');
+
+:root {
+    --paper-white: #fdfdfd;
+    --text-dark: #1a1a1a;
+    --accent-color: #333;
+    /* Papier très clair et épuré */
+    --paper-overlay: rgba(248, 247, 244, 0.92); 
+}
+
+/* --- 2. STYLE GLOBAL --- */
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    /* Funnel Sans pour tout le corps de texte par défaut */
+    font-family: 'Funnel Sans', sans-serif;
+    font-weight: 300;
+    background-color: var(--paper-white);
+    color: var(--text-dark);
+    text-transform: lowercase;
+    scroll-behavior: smooth;
+}
+
+.manifesto-section {
+    position: relative;
+    background: linear-gradient(var(--paper-overlay), var(--paper-overlay)), 
+                url('images/papier.webp');
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- 3. TYPOGRAPHIE DES TITRES (UNICA ONE) --- */
+h1, h2, .unica-one, .btn, .cv-goal, .content-legal h1, .content-legal h2 {
+    font-family: 'Unica One', sans-serif !important;
+    font-weight: 400;
+}
+
+/* --- 4. COMPOSANTS --- */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1.5px solid var(--text-dark);
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: transparent;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: 'Unica One', sans-serif;
+}
+
+.btn:hover {
+    background-color: var(--text-dark);
+    color: var(--paper-white);
+}
+
+/* --- 5. PAGES LÉGALES --- */
+.content-legal {
+    max-width: 700px;
+    text-align: left;
+    padding: 100px 20px;
+}
+
+.content-legal p, .content-legal li {
+    font-family: 'Funnel Sans', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* --- 6. CONFIGURATION DU CV (THOMAS FROGER) --- */
+
+.cv-full-page {
+    height: auto !important;
+    min-height: 100vh;
+    display: block !important;
+    padding: 80px 5%;
+    text-transform: lowercase !important;
+}
+
+.cv-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cv-title h1 {
+    font-size: 4.5rem;
+    margin: 0;
+    line-height: 0.9;
+}
+
+.cv-goal {
+    font-size: 1.8rem;
+    letter-spacing: 0.05em;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--text-dark);
+    display: inline-block;
+}
+
+.cv-contact {
+    font-family: 'Funnel Sans', sans-serif;
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 60px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.cv-block h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Corps de texte : Funnel Sans */
+.cv-block > p, 
+.line-item p {
+    font-family: 'Funnel Sans', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    max-width: 850px;
+    font-weight: 300;
+}
+
+.line-item {
+    margin-bottom: 40px;
+}
+
+/* Dates : Alumni Sans Pinstripe */
+.date {
+    font-family: 'Alumni Sans Pinstripe', sans-serif !important;
+    font-size: 1.6rem; /* Plus grande car la police est très fine */
+    line-height: 1;
+    color: var(--text-dark);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.line-item .content {
+    font-family: 'Unica One', sans-serif !important;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* --- 7. OPTIMISATION IMPRESSION --- */
+@media print {
+    .btn { display: none; }
+    .manifesto-section {
+        background: white !important;
+    }
+}
